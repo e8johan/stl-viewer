@@ -241,11 +241,11 @@ void StlView::mousePressEvent(QMouseEvent *e)
 
     m_startPoint = e->pos();
 
-    if (e->button() == Qt::LeftButton)
+    if (e->button() == Qt::LeftButton && e->modifiers() == Qt::NoModifier)
     {
         m_isRotating = true;
     }
-    else if (e->button() == Qt::RightButton)
+    else if (e->button() == Qt::RightButton || (e->button() == Qt::LeftButton && e->modifiers() == Qt::ControlModifier))
     {
         m_isPanning = true;
     }
@@ -267,7 +267,7 @@ void StlView::mouseReleaseEvent(QMouseEvent *e)
 
         updateGL();
     }
-    else if (m_isPanning && e->button() == Qt::RightButton)
+    else if (m_isPanning)
     {
         m_isPanning = false;
 
