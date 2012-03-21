@@ -6,6 +6,8 @@
 
 QT       += core gui opengl
 
+LIBS += -lGLU
+
 TARGET = stl-viewer
 TEMPLATE = app
 

@@ -2,6 +2,8 @@
 
 #include <math.h>
 
+#include <GL/glu.h>
+
 #include <QFile>
 #include <QTimer>
 #include <QWheelEvent>
@@ -23,8 +25,12 @@ StlView::StlView(QWidget *parent)
     qreal miny, maxy;
     qreal minz, maxz;
 
+    minx = miny = minz = 0;
+    maxx = maxy = maxz = 0;
+
 //    QFile file("C:\\Users\\Thelins\\Downloads\\gearPlate.stl");
-    QFile file("C:\\Users\\Thelins\\Downloads\\TheFreakyTiki.stl");
+//    QFile file("C:\\Users\\Thelins\\Downloads\\TheFreakyTiki.stl");
+    QFile file("owl.stl");
     if (file.open(QIODevice::ReadOnly))
     {
         while(!file.atEnd())
