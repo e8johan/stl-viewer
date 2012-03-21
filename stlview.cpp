@@ -256,8 +256,6 @@ void StlView::mouseReleaseEvent(QMouseEvent *e)
     // update deltaRot/deltaPan
     mouseMoveEvent(e);
 
-    QPoint delta = e->pos() - m_startPoint;
-
     if (m_isRotating && e->button() == Qt::LeftButton)
     {
         m_isRotating = false;
@@ -296,7 +294,7 @@ void StlView::mouseMoveEvent(QMouseEvent *e)
     else if (m_isPanning)
     {
         m_deltaPanX = delta.x();
-        m_deltaPanY = delta.y();
+        m_deltaPanY = -delta.y();
 
         updateGL();
     }
