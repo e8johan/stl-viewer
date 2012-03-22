@@ -1,0 +1,15 @@
+Source: stl-viewer
+Section: graphics
+Priority: extra
+Maintainer: Johan Thelin <johan@thelins.se>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.2
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Git: git://git.debian.org/collab-maint/stl-viewer.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/stl-viewer.git;a=summary
+
+Package: stl-viewer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: An STL file viewer
+ An STL file viewer for previewing STL files indended for 3D printing / CNC routing.
