@@ -1,16 +1,14 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2012-03-20T14:37:01
-#
-#-------------------------------------------------
+QT += core gui opengl
 
-QT       += core gui opengl
-
-LIBS += -lGLU
+# Seems to be necessary on Linux
+unix: LIBS += -lGLU
 
 TARGET = stl-viewer
 TEMPLATE = app
 
+# Setup an installation target
+target.path = /usr/bin
+INSTALLS += target
 
 SOURCES += main.cpp\
         mainwindow.cpp \
